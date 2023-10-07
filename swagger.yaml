@@ -2,12 +2,11 @@
 openapi: 3.0.0
 info:
   title: SWAPI - The Star Wars API
-  description: "Welcome to the swapi, the Star Wars API! This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests. If you're after a native helper library then I suggest you scroll down and check out what's available. Read through the getting started section before you dive in. Most of your problems should be solved just by reading through it."
+  description: "Welcome to the swapi, the Star Wars API! This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests. Most of your problems should be solved just by reading through it."
   version: 1.0.0
 servers:
 - url: https://swapi.dev/api
   description: "Welcome to the swapi, the Star Wars API!"
-  
 paths:
   /people:
     get:
@@ -20,9 +19,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/ArrayOfPeople'
         "404":
           description: Get all people FAIL
   /people/{id}:
@@ -59,9 +56,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/ArrayOfFilms'
         "404":
           description: Get all films FAIL
   /films/{id}:
@@ -98,9 +93,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/inline_response_200_2'
+                $ref: '#/components/schemas/ArrayOfSpecies'
         "404":
           description: Get all species FAIL
   /species/{id}:
@@ -137,9 +130,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/inline_response_200_3'
+                $ref: '#/components/schemas/ArrayOfVehicles'
         "404":
           description: Get all vehicles FAIL
   /vehicles/{id}:
@@ -176,9 +167,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/inline_response_200_4'
+                $ref: '#/components/schemas/ArrayOfPlanets'
         "404":
           description: Get all planets FAIL
   /planets/{id}:
@@ -215,9 +204,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/ArrayOfStarships'
         "404":
           description: Get all starships FAIL
   /starships/{id}:
@@ -576,7 +563,7 @@ components:
         edited:
           type: string
           description: The ISO 8601 date format of the time that this resource was edited.
-    inline_response_200:
+    ArrayOfPeople:
       type: object
       properties:
         count:
@@ -592,7 +579,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Person'
-    inline_response_200_1:
+    ArrayOfFilms:
       type: object
       properties:
         count:
@@ -608,7 +595,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Film'
-    inline_response_200_2:
+    ArrayOfSpecies:
       type: object
       properties:
         count:
@@ -624,7 +611,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Species'
-    inline_response_200_3:
+    ArrayOfVehicles:
       type: object
       properties:
         count:
@@ -640,7 +627,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Vehicle'
-    inline_response_200_4:
+    ArrayOfPlanets:
       type: object
       properties:
         count:
@@ -656,7 +643,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Planet'
-    inline_response_200_5:
+    ArrayOfStarships:
       type: object
       properties:
         count:
