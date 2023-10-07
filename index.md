@@ -35,3 +35,21 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+
+
+parameters: 
+        - in: header
+        name: X-time 
+        schema:
+          type: string
+          example: 1554466347
+          description: Поточний час у секундах (UTC)
+        required: true
+        - in: header
+        name: X-Sign
+        schema:
+          type: string
+          example: K3cBBrlCJkei0/7zlP0L60zsNZgUFeC36r8ERmGvU/sxXspcy9G5B/Qq79AvzEakRKlNk1WcvkOgBcWf3DOyDQ==
+          description: Sign (X-Time | URL)
+        required: true
