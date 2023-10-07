@@ -5,10 +5,9 @@ info:
   description: "Welcome to the swapi, the Star Wars API! This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests. If you're after a native helper library then I suggest you scroll down and check out what's available. Read through the getting started section before you dive in. Most of your problems should be solved just by reading through it."
   version: 1.0.0
 servers:
-- url: https://virtserver.swaggerhub.com/MARIARAZYMEY/swapi/1.0.0
-  description: "Welcome to the swapi, the Star Wars API!"
 - url: https://swapi.dev/api
-  description: serv
+  description: "Welcome to the swapi, the Star Wars API!"
+  
 paths:
   /people:
     get:
